@@ -161,60 +161,55 @@ The direction vectors of AB and AC are
 \label{eq:2}
 \Vec{C} - \Vec{A} ={}& \myvec{-4 \\ k+2}
 \end{align}
-If $\Vec{A}, \Vec{B},\Vec{C} $ form a line , AB, AC should have the same direction vector. Hence there exists an $\alpha$  such that
+
 \begin{align}
 \label{eq:3}
-\Vec{B} - \Vec{A}=\alpha \brak{\Vec{C} - \Vec{A}}
+\Vec{M} =\myvec{\Vec{B}-\Vec{A} & \Vec{C}-\Vec{A}}^\top
 \end{align}
 Substituting \eqref{eq:1} and \eqref{eq:2} in \eqref{eq:3}, we get
 \begin{align}
 \label{eq:4}
-\myvec{-2 \\ 3}={}&\alpha \myvec{-4 \\ k+2}\\
+\Vec{M}={}&\myvec{-2 & 3 \\ -4 & k+2}
+\end{align}
+We know that if $rank\brak{\Vec{M}}=1$, the points are collinear.\\
+Finding the rank of the matrix in the problem,
+\begin{align}
 \label{eq:5}
-={}&\myvec{-4\alpha \\ \alpha\brak{k+2}}
+\Vec{M} = \myvec{-2 & 3 \\ -4 & k+2} \overset{R_{2}\rightarrow R_{2}-2R_{1}}{\longleftrightarrow} \myvec{-2 & 3 \\ 0 & k-4}
 \end{align}
-Comparing the vectors
+Since $rank\brak{\Vec{M}}=1$, the number of non zero rows left after doing row operations should be equal to 1.\\
+Since row 1 in \eqref{eq:5} is non zero, elements row 2 should be equal to 0.
 \begin{align}
-\label{eq:6}
--2=-4\alpha\\
-\label{eq:7}
-\alpha=\frac{1}{2}
-\end{align}
-Substituting \eqref{eq:7} in \eqref{eq:4}, we get 
-\begin{align}
-k=4
+\therefore k=4
 \end{align}
 
-\item Let $\Vec{A}=\myvec{8\\1}, \Vec{B}=\myvec{k \\ -4}, \Vec{C}=\myvec{2 \\ 5}$\\
+\item Let $\Vec{A}=\myvec{8\\1}, \Vec{B}=\myvec{k \\ -4}, \Vec{C}=\myvec{2 \\ -5}$\\
 The direction vectors of AB and AC are
 \begin{align}
-\label{eq:9}
+\label{eq:7}
 \Vec{B} - \Vec{A} ={}& \myvec{k-8\\-5}\\
-\label{eq:10}
+\label{eq:8}
 \Vec{C} - \Vec{A} ={}& \myvec{-6 \\ -6}
 \end{align}
-If $\Vec{A}, \Vec{B},\Vec{C} $ form a line , AB, AC should have the same direction vector. Hence there exists an $\alpha$  such that
+\begin{align}
+\label{eq:9}
+\Vec{M} =\myvec{\Vec{B}-\Vec{A} & \Vec{C}-\Vec{A}}^\top
+\end{align}
+Substituting \eqref{eq:7} and \eqref{eq:8} in \eqref{eq:9}, we get
+\begin{align}
+\label{eq:10}
+\Vec{M}={}&\myvec{k-8 & -5 \\ -6 & -6}
+\end{align}
+We know that if $rank\brak{\Vec{M}}=1$, the points are collinear.\\
+Finding the rank of the matrix in the problem,
 \begin{align}
 \label{eq:11}
-\Vec{B} - \Vec{A}=\alpha \brak{\Vec{C} - \Vec{A}}
+\Vec{M} = \myvec{k-8 & -6 \\ -5 & -6} \overset{R_{2}\rightarrow 5R_{2}-6R_{1}}{\longleftrightarrow} \myvec{k-8 & -5 \\ 18-6k & 0}
 \end{align}
-Substituting \eqref{eq:9} and \eqref{eq:10} in \eqref{eq:11}, we get
+Since $rank\brak{\Vec{M}}=1$, the number of non zero rows left after doing row operations should be equal to 1.\\
+Since row 1 in \eqref{eq:11} is non zero for any value of k , elements row 2 should be equal to 0.
 \begin{align}
-\label{eq:12}
-\myvec{k-8\\-5}={}&\alpha \myvec{-6 \\ -6}\\
-\label{eq:13}
-={}&\myvec{-6\alpha \\ -6\alpha}
-\end{align}
-Comparing the vectors
-\begin{align}
-\label{eq:14}
--5=-6\alpha\\
-\label{eq:15}
-\alpha=\frac{5}{6}
-\end{align}
-Substituting \eqref{eq:15} in \eqref{eq:12}, we get 
-\begin{align}
-k=3
+\therefore k=3
 \end{align}
 
 \end{enumerate}
