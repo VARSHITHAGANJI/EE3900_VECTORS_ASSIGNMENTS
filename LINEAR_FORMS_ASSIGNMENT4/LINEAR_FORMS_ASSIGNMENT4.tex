@@ -1,0 +1,235 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{xurl}
+\usepackage{tabularx}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{arydshln}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\usetikzlibrary{automata, positioning}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\usepackage{blkarray}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{\textbf{LINEAR SYSTEMS AND SIGNAL PROCESSING \\ ASSIGNMENT 4}}
+\author{GANJI VARSHITHA - AI20BTECH11009}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+Download latex codes from 
+%
+\begin{lstlisting}
+https://github.com/VARSHITHAGANJI/EE3900_VECTORS_ASSIGNMENTS/blob/main/MATRIX_ASSIGNMENT2/MATRIX_ASSIGNMENT2.tex
+\end{lstlisting}
+Download all python codes from
+\begin{lstlisting}
+https://github.com/VARSHITHAGANJI/EE3900_VECTORS_ASSIGNMENTS/blob/main/MATRIX_ASSIGNMENT2/Code.py
+\end{lstlisting}
+\section*{QUESTION}
+\textbf{Linearforms 2.23}
+ Find the shortest distance between the lines
+\begin{align}
+\label{eq:1}
+ L_{1}: \; \Vec{x} ={}& \myvec{1 \\ 2\\ 3 } +\lambda_{1}\myvec{1 \\ -3 \\ 2}\\
+ \label{eq:2}
+ L_{2}: \; \Vec{x} ={}& \myvec{4 \\ 5\\ 6} + \lambda_{2}\myvec{2 \\ 3 \\ 1} 
+\end{align}
+\section*{SOLUTION}
+We have,
+\begin{align}
+    \label{eq:3}                       
+    L_{1}: \: \Vec{x}={}&a_{1}+\lambda_{1}b_{1}\\
+    \label{eq:4}
+    L_{2}: \: \Vec{x}={}&a_{2}+\lambda_{2}b_{2}
+\end{align}
+where $a_{i},b_{i}$ are positional vector, slope vector of line $L_{i}$ respectively.\\
+As $\Vec{b_{1}}\neq k \Vec{b_{2}}$, the lines are not parallel to each other.
+\\ Let us assume that $L_{1}$ and $L_{2}$ intersect at a point. Therefore,
+\begin{align}
+    \label{eq:5}
+    \myvec{1 \\ 2\\ 3 } +\lambda_{1}\myvec{1 \\ -3 \\ 2} = \myvec{4 \\ 5\\ 6} + \lambda_{2}\myvec{2 \\ 3 \\ 1} \\
+    \label{eq:6}
+    \lambda_{1}\myvec{1 \\ -3 \\ 2} + \lambda_{2}\myvec{-2 \\ -3 \\ -1}= \myvec{3 \\ 3\\ 3 } \\
+    \label{eq:7}
+    \myvec{1 & -2\\ -3 &-3 \\ 2 & -1}\myvec{\lambda_{1}\\ \lambda_{2}}=
+    \myvec{3 \\ 3\\ 3 }
+\end{align}
+The augmented matrix for the above equation in row reduced form
+\begin{multline}
+    \myvec{1 & -2 & 3\\ -3 &-3 & 3\\ 2 & -1 & 3} \xleftrightarrow{R_{2}\leftarrow R_{2}+3R_{1}}
+     \myvec{1 & -2 & 3\\ 0 &3 & 9\\ 2 & -1 & 3}\\
+     \xleftrightarrow{R_{3}\leftarrow R_{3}-2R_{1}}
+     \myvec{1 & -2 & 3\\ 0 &3 & 9\\ 0 & 3 & -3}
+   \xleftrightarrow[R_{3}\leftarrow R_{3}-3R_{2}]{R_{2}\leftarrow\frac{R_{2}}{3}}
+    \myvec{1 & -2 & 3\\ 0 & 1 & 9\\ 0 & 0 & -3}
+\end{multline}
+$\therefore$ The rank of the matrix = 3. Hence the lines do not intersect. \\
+$L_{1}$ and $L_{2}$ are skew lines. \\
+Let d be the shortest distance and $\Vec{p_{1}}, \Vec{p_{2}}$ be positional vectors of its end points.
+For d to be shortest, we know that,
+\begin{align}
+    \label{eq:9}
+    \Vec{b_{1}}^\top\brak{\Vec{p_{2}}-\Vec{p_{1}}}=0\\
+    \label{eq:10}
+     \Vec{b_{2}}^\top\brak{\Vec{p_{2}}-\Vec{p_{1}}}=0\\
+     \label{eq:11}
+     \Vec{b_{1}}^\top\brak{\brak{\Vec{a}_{2} - \Vec{a}_{1}}}+\myvec{\Vec{b_{2}} & \Vec{b}_{1}}\myvec{\lambda_{1} \\ \lambda_{2}}\\
+     \label{eq:12}
+     \Vec{b_{2}}^\top\brak{\brak{\Vec{a}_{2} - \Vec{a}_{1}}}+\myvec{\Vec{b_{2}} & \Vec{b_{1}}}\myvec{\lambda_{1} \\ \lambda_{2}}
+\end{align}
+Let 
+\begin{align}
+\label{eq:13}
+    \Vec{B}&=\myvec{\Vec{b_{2}} & \Vec{b}_{1}} & \Vec{B}^\top&=\myvec{\Vec{b_{2}}^\top \\ \Vec{b_{1}}^\top}
+\end{align}
+By combining equations \eqref{eq:11} and \eqref{eq:12} and writing in terms of $\Vec{B}$ and $\Vec{B}^\top$ using \eqref{eq:13}, we get
+\begin{align}
+    \label{eq:14}
+    \Vec{B}^\top\Vec{B}\myvec{\lambda_{1} \\ -\lambda_{2}}= \Vec{B}^\top\brak{\Vec{a}_{1} - \Vec{a}_{2}}
+\end{align}
+By putting the values of $a_{1},a_{2},b_{1},b_{2}$ in \eqref{eq:14}, we get
+\begin{align}
+    \label{eq:15}
+    \myvec{14 & -5 \\ -5 & 14}\myvec{\lambda_{1} \\ -\lambda_{2}}=\myvec{-18 \\ 0}
+\end{align}
+Solving \eqref{eq:15}, we get
+\begin{align}
+    \label{eq:16}
+    \myvec{\lambda_{1} \\ -\lambda_{2}}=\myvec{-1.4736 \\ -0.5263}
+\end{align}
+Substituting the value of $\lambda_{1}$ and $\lambda_{2}$ in \eqref{eq:3} and \eqref{eq:4}, we get
+\begin{align}
+    \label{eq:17}
+    \Vec{p_{1}} &= \myvec{-0.4736 \\ 6.4210 \\ 0.0526 }   &    \Vec{p_{2}}&=\myvec{ 5.05263\\ 6.57894\\ 6.5263}
+\end{align}
+Hence, the shortest distance between these two skew lines is
+\begin{align}
+    \label{eq:18}
+    d = \norm{\Vec{p_{2}}-\Vec{p_{1}}} = 8.5131
+\end{align}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{q4}
+\caption{Plot of skew lines}
+\end{figure}
+\end{document}
